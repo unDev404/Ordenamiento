@@ -99,26 +99,24 @@ void swap(int array[], int a, int b, long long &inter) {
     array[a] = t;
 }
 
-// QuickSort unificado (Partición + Recursividad)
+// QuickSort 
 void quickSort(int array[], int inicio, int fin, long long &comp, long long &inter) {
-    // Condición de parada de la recursividad
-    if (inicio >= fin) {
-        return; 
-    }
+    if (inicio >= fin) return;
 
-    int pivote = array[inicio];
-    int inferior = inicio + 1;
+    // --- CAMBIO: Elegir el pivote central en lugar del primero ---
+    int medio = inicio + (fin - inicio) / 2;
+    int pivote = array[medio]; 
+    
+    int inferior = inicio;
     int superior = fin;
     
     do {
-        while (inferior <= superior) {
+        while (array[inferior] < pivote) {
             comp++;
-            if (array[inferior] > pivote) break;
             inferior++;
         }
-        while (inferior <= superior) {
+        while (array[superior] > pivote) {
             comp++;
-            if (array[superior] <= pivote) break;
             superior--;
         }
         if (inferior <= superior) {
@@ -128,11 +126,9 @@ void quickSort(int array[], int inicio, int fin, long long &comp, long long &int
         }
     } while (inferior <= superior);
     
-    swap(array, inicio, superior, inter);
-    
-    // Llamadas recursivas para ordenar la mitad izquierda y derecha
-    quickSort(array, inicio, superior - 1, comp, inter);
-    quickSort(array, superior + 1, fin, comp, inter);
+    // Llamadas recursivas
+    if (inicio < superior) quickSort(array, inicio, superior, comp, inter);
+    if (inferior < fin) quickSort(array, inferior, fin, comp, inter);
 }
 
-
+//g++ -O3 main.cpp testOrdenamiento.cpp -o programa.exe
