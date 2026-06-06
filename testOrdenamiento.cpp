@@ -16,7 +16,34 @@ array[j-1]=array[j];
  array[j]=t;
  }
 }
-//burbujaModify
+
+
+void burbujaModificada(int arreglo[], int n) {
+    bool intercambiado;
+    
+    for (int i = 0; i < n - 1; i++) {
+        intercambiado = false; // Se reinicia la bandera en cada pasada
+        
+        // Los últimos 'i' elementos ya están en su lugar correcto
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arreglo[j] > arreglo[j + 1]) {
+                // Intercambio manual de variables
+                int temporal = arreglo[j];
+                arreglo[j] = arreglo[j + 1];
+                arreglo[j + 1] = temporal;
+                
+                intercambiado = true; // Hubo al menos un intercambio
+            }
+        }
+        
+        // Si no hubo ningún intercambio en la pasada interior, 
+        // significa que el arreglo ya está ordenado.
+        if (!intercambiado) {
+            break; // Rompemos el ciclo para ahorrar tiempo de ejecución
+        }
+    }
+}
+
 
 void insercion(int array[],int size)
 {

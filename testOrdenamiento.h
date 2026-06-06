@@ -4,6 +4,7 @@
 #include <vector>
 
 void burbuja(int array[], int size);
+void burbujaModificada(int arreglo[], int n);
 void insercion(int array[], int size);
 void seleccion(int array[], int size);
 void shellsort(int array[], int size);
