@@ -6,6 +6,14 @@
 #include "testOrdenamiento.h"
 #include <algorithm>
 
+/*
+\\Grupo:
+Christopher Lara
+Sebastian Quintana
+Alfredo díaz
+Keymers Campos 
+*/
+
 using namespace std;
 
 // --- ESTRUCTURA DE RESULTADOS ---
