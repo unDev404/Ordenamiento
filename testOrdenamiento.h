@@ -3,13 +3,13 @@
 
 #include <vector>
 
-void burbuja(int array[], int size);
-void burbujaModificada(int arreglo[], int n);
-void insercion(int array[], int size);
-void seleccion(int array[], int size);
-void shellsort(int array[], int size);
+void burbuja(int array[], int size, long long &comp, long long &inter);
+void burbujaModificada(int arreglo[], int n, long long &comp, long long &inter);
+void insercion(int array[], int size, long long &comp, long long &inter);
+void seleccion(int array[], int size, long long &comp, long long &inter);
+void shellsort(int array[], int size, long long &comp, long long &inter);
 void swap(int array[], int a, int b);
-int quickSort(int array[], int inicio, int fin);
+void quickSort(int array[], int inicio, int fin, long long &comp, long long &inter);
 
 
 #endif // TESTORDENAMIENTO_H
